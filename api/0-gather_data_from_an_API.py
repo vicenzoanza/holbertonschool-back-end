@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 import requests
 import json
-import sys
-
+from sys import argv
 if __name__ == "__main__":
 
     if len(argv) == 1:
@@ -27,5 +26,8 @@ if __name__ == "__main__":
                 ready += 1
             else:
                 not_ready += 1
-        
-        print f"Employee {'name'} is done with tasks({ready}/{not_ready + ready})"
+                
+        print (f"Employee {'name'} is done with tasks({ready}/{not_ready + ready})")
+        for task in total_user_request_json:
+            if task["completed"]:
+                print(f'\t {task["title"]}')
