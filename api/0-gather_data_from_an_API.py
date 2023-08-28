@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Using this REST API, for a given employee ID, returns information about his/her list progress."""
-import requests
 import json
+import requests
 from sys import argv
 if __name__ == "__main__":
 
@@ -10,11 +10,14 @@ if __name__ == "__main__":
 
     
     employee_id = argv[1]
-
-    request_user = requests.get(f'https://jsonplaceholder.typicode.com/users/{employee_id}')
+    request_user = requests.get(
+        f'https://jsonplaceholder.typicode.com/users/{employee_id}'
+        )
     request_user_json = json.loads(request_user.text)
 
-    total_user_request = requests.get(f'https://jsonplaceholder.typicode.com/todos?userId={employee_id}')
+    total_user_request = requests.get(
+        f'https://jsonplaceholder.typicode.com/todos?userId={employee_id}'
+        )
     total_user_request_json = json.loads(total_user_request.text)
 
     completed_tasks = []
@@ -26,6 +29,7 @@ if __name__ == "__main__":
 
     num_completed_tasks = len(completed_tasks)
 
-    print(f"Employee {request_user_json['name']} is done with tasks({num_completed_tasks}/{total_tasks}):")
+    print(f"Employee {request_user_json['name']} is done with tasks"
+          f"({num_completed_tasks}/{total_tasks}):")
     for task_title in completed_tasks:
         print(f"\t {task_title}")
