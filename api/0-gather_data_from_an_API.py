@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Using this REST API, for a given employee ID, returns information about his/her list progress."""
+"""Using this REST API, given employee ID, returns information about his/her list progress."""
 import json
 import requests
 from sys import argv
@@ -8,7 +8,6 @@ if __name__ == "__main__":
     if len(argv) != 2:
         exit()
 
-    
     employee_id = argv[1]
     request_user = requests.get(
         f'https://jsonplaceholder.typicode.com/users/{employee_id}'
