@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Using this REST API, given employee ID, returns information about his/her list progress."""
+"""Using this REST API, given employee ID, returns information list progress."""
 import json
 import requests
 from sys import argv
