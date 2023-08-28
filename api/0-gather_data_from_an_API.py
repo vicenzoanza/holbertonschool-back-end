@@ -20,6 +20,8 @@ if __name__ == "__main__":
     total_user_request_json = json.loads(total_user_request.text)
 
     completed_tasks = []
+    completed =  0
+    
     total_tasks = len(total_user_request_json)
 
     for task in total_user_request_json:
